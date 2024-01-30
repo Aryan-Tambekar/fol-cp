@@ -18,14 +18,14 @@ function App() {
       <ToastContainer />
       <Routes>
         {currentUser && <Route path="/" element={<Home />} />}
-        {!currentUser && <Route path="/demo" element={<Demo />} />}
+        {!currentUser && <Route path="/landing" element={<Demo />} />}
         <Route path="/profile/:userId" element={<Profile />} />
         <Route path="/write" element={<Write />} />
         <Route path="/post/:postId" element={<SinglePost />} />
         <Route path="/editPost/:postId" element={<EditPost />} />
         <Route
           path="*"
-          element={<Navigate to={!currentUser ? "/demo" : "/"} />}
+          element={<Navigate to={!currentUser ? "/landing" : "/"} />}
         />
       </Routes>
     </>
