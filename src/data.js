@@ -20,6 +20,7 @@ export const discover = [
   "Knowledge",
   "Self Improvement",
   "Machine Learning",
+  "tag",
 ];
 
 export const discoverActions = [
