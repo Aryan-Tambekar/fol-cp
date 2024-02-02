@@ -1,48 +1,39 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { readTime } from "../.././../utils/helper";
+import { readTime } from "../../../utils/helper";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 
 const Recommended = ({ post: singlePost }) => {
-  const { data } = useFetch("posts");
-  const [commonTags, setCommonTags] = useState([]);
+  const { data, isLoading } = useFetch("posts");
+  const [recommendedPosts, setRecommendedPosts] = useState([]);
 
   useEffect(() => {
-    let recommendedPost = [];
-    data &&
-      data.forEach((post) => {
-        if (post.id === singlePost.id) {
-          return;
-        }
+    if (!data || !singlePost) return;
 
-        const postTag = post.tags;
-        const commonTags = postTag.filter((tag) =>
-          singlePost?.tags?.includes(tag)
-        );
+    const recommendedPost = data
+      .filter((post) => post.id !== singlePost.id)
+      .filter((post) => {
+        const commonTags = post.tags.filter((tag) => singlePost?.tags?.includes(tag));
+        return commonTags.length > 0;
+      })
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
 
-        if (commonTags.length > 0) {
-          recommendedPost.push({
-            ...post,
-            commonTags,
-          });
-        }
-      });
-    recommendedPost.sort(() => Math.round() * -0.5);
-    const minRecommendation = 4;
-    const slicePost = recommendedPost.slice(0, minRecommendation);
-    setCommonTags(slicePost);
+    setRecommendedPosts(recommendedPost);
   }, [data, singlePost]);
 
   return (
     <section className="bg-gray-100">
       <div className="w-[90%] md:w-[90%] lg:w-[60%] mx-auto py-[3rem]">
         <h2 className="text-xl font-bold">Recommended from FOL</h2>
-        {commonTags.length < 0 ? (
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : recommendedPosts.length === 0 ? (
           <p>No recommended posts found based on your preference</p>
         ) : (
           <div className="grid grid-cols-card gap-[2rem] my-[3rem]">
-            {commonTags.map((post) => (
+            {recommendedPosts.map((post) => (
               <Post post={post} key={post.id} />
             ))}
           </div>
