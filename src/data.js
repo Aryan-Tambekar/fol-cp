@@ -17,9 +17,12 @@ export const discover = [
   "Technology",
   "Study",
   "Programming",
+  "Sport",
   "Knowledge",
   "Self Improvement",
+  "Relationships",
   "Machine Learning",
+  "Politics",
   "tag",
 ];
 
