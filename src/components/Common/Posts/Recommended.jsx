@@ -37,7 +37,7 @@ const Recommended = ({ post: singlePost }) => {
   return (
     <section className="bg-gray-100">
       <div className="w-[90%] md:w-[90%] lg:w-[60%] mx-auto py-[3rem]">
-        <h2 className="text-xl font-bold">Recommended from Medium</h2>
+        <h2 className="text-xl font-bold">Recommended from FOL</h2>
         {commonTags.length < 0 ? (
           <p>No recommended posts found based on your preference</p>
         ) : (
@@ -52,20 +52,23 @@ const Recommended = ({ post: singlePost }) => {
   );
 };
 
-export default Recommended;
-
 const Post = ({ post }) => {
   const { title, desc, created, postImg, id: postId, userId } = post;
   const { data } = useFetch("users");
 
-  const navigate = useNavigate(null);
+  // Find the user based on userId
+  const foundUser = data && data.find((user) => user?.id === userId);
 
-  const { username, userImg } =
-    data && data.find((user) => user?.id === userId);
+  // Check if the user is found before destructuring properties
+  const { username, userImg } = foundUser || {};
+
+  const navigate = useNavigate();
+
   return (
     <div
       onClick={() => navigate(`/post/${postId}`)}
-      className="w-full cursor-pointer">
+      className="w-full cursor-pointer"
+    >
       {postImg && (
         <img
           className="w-full h-[200px] object-cover"
@@ -93,3 +96,5 @@ const Post = ({ post }) => {
     </div>
   );
 };
+
+export default Recommended;
