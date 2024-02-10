@@ -7,10 +7,6 @@ export const nav = [
     title: "Membership",
     path: "/",
   },
-  {
-    title: "Write",
-    path: "/",
-  },
 ];
 
 export const discover = [

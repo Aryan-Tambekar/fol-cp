@@ -20,19 +20,9 @@ const UserModal = ({ setModal }) => {
       path: `/profile/${currentUser?.uid}`,
     },
     {
-      title: "Library",
-      icon: <MdOutlineLocalLibrary />,
-      path: "/library",
-    },
-    {
-      title: "Stories",
+      title: "Posts",
       icon: <BiSpreadsheet />,
       path: "/stories",
-    },
-    {
-      title: "Stats",
-      icon: <HiOutlineChartBar />,
-      path: "/stats",
     },
   ];
 

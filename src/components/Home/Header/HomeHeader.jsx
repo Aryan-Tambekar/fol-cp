@@ -15,8 +15,7 @@ import { db } from "../../../firebase/firebase";
 import { toast } from "react-toastify";
 
 const HomeHeader = () => {
-  const { allUsers, userLoading, currentUser, setPublish, title, description } =
-    Blog();
+  const { allUsers, userLoading, currentUser, setPublish, title, description } = Blog();
   const [modal, setModal] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -80,14 +79,14 @@ const HomeHeader = () => {
               {loading ? "Updating..." : "Save and Update"}
             </button>
           ) : (
-            <Link
-              to="/write"
-              className="hidden md:flex items-center gap-1 text-gray-500">
-              <span className="text-3xl">
-                <LiaEditSolid />
-              </span>
-              <span className="text-sm mt-2">Write</span>
-            </Link>
+            currentUser?.uid === "TStIzhHTPedoEf8831iNvWFmhnX2" && (
+              <Link to="/write" className="hidden md:flex items-center gap-1 text-gray-500">
+                <span className="text-3xl">
+                  <LiaEditSolid />
+                </span>
+                <span className="text-sm mt-2">Write</span>
+              </Link>
+            )
           )}
           <span className="text-3xl text-gray-500 cursor-pointer">
             <IoMdNotificationsOutline />

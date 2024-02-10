@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { nav } from "../../data";
 import Auth from "./Auth/Auth";
 import { Blog } from "../../Context/Context";
+import SeeAll from "./SeeAll";
 
 const DemoHeader = () => {
   const [isActive, setIsActive] = useState(false);
@@ -34,6 +35,13 @@ const DemoHeader = () => {
                 {link.title}
               </Link>
             ))}
+          </div>
+          <div className="relative">
+            <button
+              onClick={() =><Route path="/seeall" element={<SeeAll />} />}
+              className="hidden text-sm sm:flex items-center gap-5">
+              See All
+            </button>
           </div>
           <div className="relative">
             <button
