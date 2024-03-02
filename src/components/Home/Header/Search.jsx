@@ -35,7 +35,7 @@ const Search = ({ modal, setModal }) => {
               onChange={(e) => setSearch(e.target.value)}
               className="bg-transparent outline-none py-[0.7rem] text-sm w-full"
               type="text"
-              placeholder="Search Medium"
+              placeholder="Search"
             />
             {search !== "" && (
               <div className="absolute right-0 left-0 top-full bg-white shadow rounded-md">

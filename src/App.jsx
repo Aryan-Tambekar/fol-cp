@@ -10,6 +10,9 @@ import Write from "./components/Home/Write/Write";
 import SinglePost from "./components/Common/Posts/SinglePost";
 import EditPost from "./components/Common/Posts/EditPost";
 import FilterPost from "./components/Demo/FilterPost";
+import { SeeAll } from "./components/Demo/SeeAll";
+import { About } from "./components/Demo/About"
+
 
 function App() {
   const { currentUser } = Blog();
@@ -25,6 +28,8 @@ function App() {
         <Route path="/post/:postId" element={<SinglePost />} />
         <Route path="/editPost/:postId" element={<EditPost />} />
         <Route path="/filter/:tag" element={<FilterPost />} />
+        <Route path="/seeall" element={<SeeAll />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="*"
           element={<Navigate to={!currentUser ? "/Landing" : "/"} />}
