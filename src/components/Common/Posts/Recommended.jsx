@@ -37,7 +37,7 @@ const Recommended = ({ post: singlePost }) => {
   return (
     <section className="bg-gray-100">
       <div className="w-[90%] md:w-[90%] lg:w-[60%] mx-auto py-[3rem]">
-        <h2 className="text-xl font-bold">Recommended from Medium</h2>
+        <h2 className="text-xl font-bold">Recommended from FOL</h2>
         {commonTags.length < 0 ? (
           <p>No recommended posts found based on your preference</p>
         ) : (
