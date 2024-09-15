@@ -39,7 +39,7 @@ const DemoHeader = () => {
         <Link to={"/"}>
           <img
             className="h-[2.5rem]"
-            src="https://miro.medium.com/v2/resize:fit:8978/1*s986xIGqhfsN8U--09_AdA.png"
+            src="WEBSITE FRATERNITY OF LEADERS.png"
             alt="logo"
           />
         </Link>
