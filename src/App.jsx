@@ -12,6 +12,7 @@ import EditPost from "./components/Common/Posts/EditPost";
 import FilterPost from "./components/Demo/FilterPost";
 import { SeeAll } from "./components/Demo/SeeAll";
 import { About } from "./components/Demo/About"
+import Events from './components/Demo/Events'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           path="*"
           element={<Navigate to={!currentUser ? "/Landing" : "/"} />}
         />
+        <Route path='/events' element={<Events/>}/>
       </Routes>
     </>
   );
