@@ -1,155 +1,146 @@
 import React from 'react';
 
 export const About = () => {
+  const sectionHeadingStyle = {
+    fontSize: '32px',
+    fontWeight: 'bold',
+    color: '#F5A623', // Yellow color for headings
+    textAlign: 'center',
+    marginBottom: '25px',
+  };
+
+  const descriptionStyle = {
+    fontSize: '18px',
+    lineHeight: '1.6',
+    color: '#555',
+    maxWidth: '800px',
+    margin: 'auto',
+    textAlign: 'center',
+  };
+
   const circleImageStyle = {
     borderRadius: '50%',
-    width: '100px',
-    height: '100px',
+    width: '125px',
+    height: '125px',
     objectFit: 'cover',
     transition: 'transform 0.3s ease-in-out',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   };
 
-  const centerContainerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    textAlign: 'center', 
-  };
-
-  const personContainerStyle = {
+  const personCardStyle = {
+    backgroundColor: '#fff',
+    borderRadius: '12px',
+    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
+    padding: '20px',
+    textAlign: 'center',
+    margin: '15px',
+    transition: 'transform 0.3s ease',
+    width: '250px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: '25px', 
+    justifyContent: 'center', // Align images and text to the center
+    cursor: 'pointer',
   };
 
-  const sectionHeadingStyle = {
-    fontSize: '24px',
+  const personNameStyle = {
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: '15px', 
-    color: '#333', 
+    fontSize: '18px',
+    color: '#333',
+    marginTop: '10px',
+  };
+
+  const roleStyle = {
+    color: '#777',
+    fontSize: '16px',
+  };
+
+  const backgroundStyle = {
+    background: 'linear-gradient(135deg, #fff 30%, #fff6b3 100%)', // White and light yellow gradient
+    padding: '50px 0',
+    minHeight: '100vh',
   };
 
   const handleHover = (event) => {
-    event.target.style.transform = 'scale(1.1)'; 
+    event.currentTarget.style.transform = 'scale(1.1)';
   };
 
   const handleHoverOut = (event) => {
-    event.target.style.transform = 'scale(1)'; 
+    event.currentTarget.style.transform = 'scale(1)';
   };
 
   return (
-    <div>
-      <br></br>
-      <p style={sectionHeadingStyle}>ABOUT US</p>
-      <p>jfhqefkjqwvudjq fjcwcdfcawbdvjkawbvbwjbcdjfbcfejbefcjkewfbdefjcbewjkbcbdjkwbckjbewkcf
-        cwehckwevkfcbfweukbfbcawdsckhuvb
-      </p>
-      <br></br>
-      <br></br>
+    <div style={backgroundStyle}>
+      <div>
+        <p style={sectionHeadingStyle}>ABOUT US</p>
+        <p style={descriptionStyle}>
+          Fraternity of Leaders is a dynamic and vibrant college club dedicated to cultivating leadership qualities among students. Founded on the principles of empowerment, growth, and community, our club provides a supportive environment where students can develop and enhance their leadership skills while fostering meaningful connections with like-minded peers.
+        </p>
+        <p style={descriptionStyle}>
+          Our club is more than just a series of events and meetings; it's a close-knit community where members support and inspire each other to reach their full potential.
+        </p>
+      </div>
+      
+      <br />
+      
       <p style={sectionHeadingStyle}>Faculty Coordinator</p>
-      <div className="container" style={centerContainerStyle}>
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 1" style={{ ...circleImageStyle, width: '125px', height: '125px' }} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 1</p>
-          <p>Position 1</p>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={personCardStyle} onMouseOver={handleHover} onMouseOut={handleHoverOut}>
+          <img src="profile.jpg" alt="Faculty Coordinator" style={circleImageStyle} />
+          <p style={personNameStyle}>Name 1</p>
+          <p style={roleStyle}>Position 1</p>
         </div>
       </div>
-      <br></br>
-      <br></br>
+
+      <br />
+      
       <p style={sectionHeadingStyle}>Presidence Council</p>
-      <div className="container" style={centerContainerStyle}>
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 2" style={{ ...circleImageStyle, width: '115px', height: '115px' }} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut} />
-          <p>Name 2</p>
-          <p>Position 2</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={{ ...circleImageStyle, width: '115px', height: '115px' }} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut} />
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={{ ...circleImageStyle, width: '115px', height: '115px' }} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut} />
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={{ ...circleImageStyle, width: '115px', height: '115px' }} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {[
+          { img: "public\\Screenshot 2024-08-05 100729.png", name: "Chetan Chaudhary" },
+          { img: "public\\Screenshot 2024-08-05 100848.png", name: "Rithvik Rao" },
+          { img: "public\\WhatsApp Image 2024-04-09 at 23.25.29_d9444a4b.jpg", name: "Saniya Gupta" },
+          { img: "public\\Screenshot 2024-06-21 223056.png", name: "Vasu Kakkar" },
+        ].map((person, index) => (
+          <div key={index} style={personCardStyle} onMouseOver={handleHover} onMouseOut={handleHoverOut}>
+            <img src={person.img} alt={person.name} style={circleImageStyle} />
+            <p style={personNameStyle}><b>{person.name}</b></p>
+          </div>
+        ))}
       </div>
-      <br></br>
-      <br></br>
+
+      <br />
+      
       <p style={sectionHeadingStyle}>Department Leads</p>
-      <div className="container" style={centerContainerStyle}>
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 2" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut} />
-          <p>Name 2</p>
-          <p>Position 2</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {[
+          { img: "public\\WhatsApp Image 2024-04-14 at 10.26.24_91a5fce2.jpg", name: "Faiza Reza", role: "Content Creation & Publication Lead" },
+          { img: "public\\Screenshot 2024-06-21 221926.png", name: "Manav Agarwal", role: "Design Lead" },
+          { img: "public\\IMG-20240310-WA0226.jpg", name: "Naman Goel", role: "Event Execution Lead" },
+          { img: "public\\WhatsApp Image 2024-04-14 at 13.29.15_76c831da.jpg", name: "Amartya Anayachala", role: "Membership & Networking Lead" },
+        ].map((person, index) => (
+          <div key={index} style={personCardStyle} onMouseOver={handleHover} onMouseOut={handleHoverOut}>
+            <img src={person.img} alt={person.name} style={circleImageStyle} />
+            <p style={personNameStyle}><b>{person.name}</b></p>
+            <p style={roleStyle}>{person.role}</p>
+          </div>
+        ))}
       </div>
-      <div className="container" style={centerContainerStyle}>
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 2" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 2</p>
-          <p>Position 2</p>
-        </div>
 
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
+      <br />
 
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
-
-        <div style={personContainerStyle}>
-          <img src="profile.jpg" alt="Person 3" style={circleImageStyle} onMouseOver={handleHover} 
-            onMouseOut={handleHoverOut}/>
-          <p>Name 3</p>
-          <p>Position 3</p>
-        </div>
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {[
+          { img: "public\\IMG_20240127_204358_114 (1).jpg", name: "Rohan G", role: "Personal Growth & Career Dev. Lead" },
+          { img: "public\\Screenshot 2024-08-05 102952.png", name: "Aryan Tambekar", role: "Tech & Digital Infra Lead" },
+          { img: "public\\WhatsApp Image 2024-04-14 at 22.55.41_7f283d8a.jpg", name: "Avni Jain", role: "Sponsorship & Partnerships Lead" },
+        ].map((person, index) => (
+          <div key={index} style={personCardStyle} onMouseOver={handleHover} onMouseOut={handleHoverOut}>
+            <img src={person.img} alt={person.name} style={circleImageStyle} />
+            <p style={personNameStyle}><b>{person.name}</b></p>
+            <p style={roleStyle}>{person.role}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
